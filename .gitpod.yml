@@ -10,9 +10,9 @@ tasks:
     - name: install_pgadmin
       before: |
         docker volume create --name=dtc_pgadmin_volume_local -d local
-        docker run -it -e PGADMIN_DEFAULT_EMAIL="admin@admin.com" -e PGADMIN_DEFAULT_PASSWORD="root" -v dtc_pgadmin_volume_local:/var/lib/pgadmin -p 8080:8080 --network=pg-network --name pgadmin dpage/pgadmin4 
+        docker run -it -e PGADMIN_DEFAULT_EMAIL="admin@admin.com" -e PGADMIN_DEFAULT_PASSWORD="root" -v dtc_pgadmin_volume_local:/var/lib/pgadmin -p 80:80 --network=pg-network --name pgadmin dpage/pgadmin4 
 
 ports:
   - name: Pgadmin
-    port: 8080:8080
+    port: 80:80
     protocol: https
